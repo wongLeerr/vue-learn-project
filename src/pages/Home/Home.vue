@@ -1,13 +1,9 @@
 <template>
-  <div>
-    {{ store.count }}
-  </div>
+  <GlobalFontSize />
 </template>
 
 <script setup lang="ts">
-import { useHomeStore } from '@/store/modules/home';
-
-const store = useHomeStore();
+import GlobalFontSize from './components/GlobalFontSize.vue';
 </script>
 
 <style scoped lang="less">
