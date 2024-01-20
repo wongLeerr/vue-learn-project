@@ -1,5 +1,6 @@
 import path from 'path';
 import { defineConfig } from 'vite';
+import { postCssPxToViewport } from './src/plugins/postCss-px-to-viewport';
 import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
@@ -14,6 +15,9 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       less: {}
+    },
+    postcss: {
+      plugins: [postCssPxToViewport()]
     }
   }
 });

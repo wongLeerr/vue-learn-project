@@ -1,20 +1,9 @@
 <template>
-  <div>
-    {{ store.count }}
-  </div>
+  <Grail />
 </template>
 
 <script setup lang="ts">
-import { useHomeStore } from '@/store/modules/home';
-
-const store = useHomeStore();
+import Grail from './components/Grail.vue';
 </script>
 
-<style scoped lang="less">
-@color: #ccc;
-.box {
-  .inner {
-    color: @color;
-  }
-}
-</style>
+<style scoped lang="less"></style>
