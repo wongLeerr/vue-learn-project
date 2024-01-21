@@ -8,6 +8,8 @@ import store from './store/index';
 
 import ElementPlus from 'element-plus';
 
+import 'uno.css';
+
 const app = createApp(App);
 
 app.use(router);
