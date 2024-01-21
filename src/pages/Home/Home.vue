@@ -1,20 +1,43 @@
 <template>
-  <div>
-    {{ store.count }}
-  </div>
+  <Btn @sendMessage="send" type="success">按钮1</Btn>
+  <Btn type="error">按钮2</Btn>
 </template>
 
 <script setup lang="ts">
-import { useHomeStore } from '@/store/modules/home';
+import { h } from 'vue';
 
-const store = useHomeStore();
+interface IProps {
+  type: string;
+}
+
+const Btn = (props: IProps, ctx: any) => {
+  console.log(props);
+  console.log(ctx);
+  return h(
+    'button',
+    {
+      style: {
+        color: props.type === 'success' ? 'green' : 'red',
+        border: '1px solid green',
+        borderRadius: '5px',
+        padding: '5px 10px'
+      },
+      onClick: () => {
+        console.log('我被点击');
+      },
+      // 双击时触发父组件的send方法
+      onDblclick: () => {
+        ctx.emit('sendMessage');
+      }
+    },
+    ctx.slots.default()
+  );
+};
+
+// 子组件触发sendMessage事件时执行的回调
+const send = () => {
+  console.log('send');
+};
 </script>
 
-<style scoped lang="less">
-@color: #ccc;
-.box {
-  .inner {
-    color: @color;
-  }
-}
-</style>
+<style scoped lang="less"></style>
