@@ -2,7 +2,6 @@
   "name": "vue-learn-project",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
@@ -19,6 +18,8 @@
   "devDependencies": {
     "@types/node": "^20.11.5",
     "@vitejs/plugin-vue": "^4.5.2",
+    "electron": "^28.1.4",
+    "electron-builder": "^24.9.1",
     "less": "^4.2.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
