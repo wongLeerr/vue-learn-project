@@ -11,11 +11,17 @@ const routes = [
   {
     path: '/',
     name: 'home',
+    meta: {
+      title: '首页'
+    },
     component: Home
   },
   {
     path: '/category',
     name: 'category',
+    meta: {
+      title: '分类页'
+    },
     component: Category
   }
 ];
@@ -28,6 +34,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   console.log('beforeEach to:', to);
   VNode.component?.exposed.startLoading();
+  document.title = to.meta.title;
   next();
 });
 
