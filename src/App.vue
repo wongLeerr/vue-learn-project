@@ -1,10 +1,13 @@
 <template>
   <div>
+    <loading-bar />
     <router-view></router-view>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import LoadingBar from './components/Loading.vue';
+</script>
 
 <style>
 /* 消除默认样式 */
