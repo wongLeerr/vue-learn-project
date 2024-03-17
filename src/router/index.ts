@@ -12,7 +12,8 @@ const routes = [
     path: '/',
     name: 'home',
     meta: {
-      title: '首页'
+      title: '首页',
+      transition: 'animate__animated animate__backInDown'
     },
     component: Home
   },
@@ -20,7 +21,8 @@ const routes = [
     path: '/category',
     name: 'category',
     meta: {
-      title: '分类页'
+      title: '分类页',
+      transition: 'animate__animated  animate__fadeIn'
     },
     component: Category
   }

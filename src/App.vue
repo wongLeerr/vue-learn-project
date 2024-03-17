@@ -1,7 +1,11 @@
 <template>
   <div>
     <loading-bar />
-    <router-view></router-view>
+    <router-view #default="{ Component, route }">
+      <transition :enter-active-class="route.meta.transition">
+        <component :is="Component"></component>
+      </transition>
+    </router-view>
   </div>
 </template>
 
@@ -14,4 +18,6 @@ import LoadingBar from './components/Loading.vue';
 @import url(./assets/css/reset.css);
 /* 引入 element 样式 */
 @import url(element-plus/dist/index.css);
+/* 引入 animate.css 样式 */
+@import url(animate.css);
 </style>
