@@ -1,20 +1,14 @@
 <template>
-  <div>
-    {{ store.count }}
-  </div>
+  <wll-btn></wll-btn>
 </template>
 
 <script setup lang="ts">
-import { useHomeStore } from '@/store/modules/home';
+import { defineCustomElement } from 'vue';
+import CustomVueCe from '@/components/CustomVue.ce.vue';
 
-const store = useHomeStore();
+const Btn = defineCustomElement(CustomVueCe);
+
+window.customElements.define('wll-btn', Btn);
 </script>
 
-<style scoped lang="less">
-@color: #ccc;
-.box {
-  .inner {
-    color: @color;
-  }
-}
-</style>
+<style scoped lang="less"></style>
