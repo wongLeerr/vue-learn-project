@@ -4,7 +4,10 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// 打印环境变量
+console.log(import.meta.env);
+</script>
 
 <style>
 /* 消除默认样式 */
