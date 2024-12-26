@@ -1,14 +1,16 @@
 <template>
-  <div>{{ store.count }} 6</div>
+  <div class="home">
+    <ProgressBar />
+  </div>
 </template>
 
 <script setup lang="ts">
-import { defineCustomElement } from 'vue';
-import CustomVueCe from '@/components/CustomVue.ce.vue';
-
-const Btn = defineCustomElement(CustomVueCe);
-
-window.customElements.define('wll-btn', Btn);
+import ProgressBar from './components/ProgressBar.vue';
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+.home {
+  width: 100%;
+  height: 100%;
+}
+</style>
