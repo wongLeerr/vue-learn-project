@@ -1,11 +1,11 @@
 <template>
   <div class="home">
-    <ProgressBar />
+    <CountDown :timeStamp="1735660800000" eventName="跨年" />
   </div>
 </template>
 
 <script setup lang="ts">
-import ProgressBar from './components/ProgressBar.vue';
+import CountDown from '@/components/common/CountDown/CountDown.vue';
 </script>
 
 <style scoped lang="less">
