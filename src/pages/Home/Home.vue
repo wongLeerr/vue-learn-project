@@ -1,11 +1,11 @@
 <template>
   <div class="home">
-    <CountDown :timeStamp="1735660800000" eventName="跨年" />
+    <Calendar />
   </div>
 </template>
 
 <script setup lang="ts">
-import CountDown from '@/components/common/CountDown/CountDown.vue';
+import Calendar from '@/components/common/Calendar/Calendar.vue';
 </script>
 
 <style scoped lang="less">

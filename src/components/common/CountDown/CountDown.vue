@@ -44,7 +44,6 @@
 </template>
 
 <script setup lang="ts">
-import { log, time } from 'console';
 import { computed, ref, onMounted, onBeforeUnmount } from 'vue';
 const props = defineProps({
   timeStamp: {

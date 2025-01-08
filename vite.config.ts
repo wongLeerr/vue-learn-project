@@ -3,12 +3,8 @@ import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { ElectronDevPlugin } from './plugins/vite.electron.dev';
 
-console.log('process', process.env.NODE_ENV);
-
 // https://vitejs.dev/config/
 export default ({ mode }) => {
-  console.log(loadEnv(mode, process.cwd()));
-  console.log('mode:', mode);
   return defineConfig({
     plugins: [vue()],
     resolve: {
