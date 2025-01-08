@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import NProgress from 'nprogress';
 import Home from '../pages/Home/Home.vue';
 import Category from '../pages/Category/Category.vue';
+import NextPage from '../components/demo/NextPage.vue';
 
 const routes = [
   {
@@ -13,6 +14,11 @@ const routes = [
     path: '/category',
     name: 'category',
     component: Category
+  },
+  {
+    path: '/demo/next-page',
+    name: 'nextPage',
+    component: NextPage
   }
 ];
 

@@ -17,6 +17,10 @@ export default ({ mode }) => {
       preprocessorOptions: {
         less: {}
       }
+    },
+    server: {
+      port: 3000, // 将端口号改为 3000
+      open: true // 可选，设置为 true 表示启动项目后自动打开浏览器
     }
   });
 };

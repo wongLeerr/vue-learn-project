@@ -1,0 +1,43 @@
+<template>
+  <div class="scroll-container" @scroll="handleScroll">
+    <ul>
+      <li v-for="item in itemList" :key="item">{{ item }}</li>
+    </ul>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const itemList = ref([
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 24, 25, 26, 27, 28, 29, 30
+]);
+
+const handleScroll = (event) => {
+  console.log('scroll', event);
+  const { scrollTop, clientHeight, scrollHeight } = event.target;
+  if (scrollTop + clientHeight >= scrollHeight - 20) {
+    loadMore();
+  }
+};
+
+const loadMore = () => {
+  itemList.value = [...itemList.value, ...itemList.value];
+};
+</script>
+
+<style lang="less" scoped>
+.scroll-container {
+  width: 500px;
+  height: 100%;
+  border: 2px solid blue;
+  text-align: center;
+  overflow-y: scroll;
+  li {
+    margin: 10px 0;
+    padding: 10px 50px;
+    border: 1px solid red;
+  }
+}
+</style>
