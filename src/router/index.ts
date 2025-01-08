@@ -3,6 +3,7 @@ import NProgress from 'nprogress';
 import Home from '../pages/Home/Home.vue';
 import Category from '../pages/Category/Category.vue';
 import NextPage from '../components/demo/NextPage.vue';
+import NextPage2 from '../components/demo/NextPage2.vue';
 
 const routes = [
   {
@@ -19,6 +20,11 @@ const routes = [
     path: '/demo/next-page',
     name: 'nextPage',
     component: NextPage
+  },
+  {
+    path: '/demo/next-page2',
+    name: 'nextPage2',
+    component: NextPage2
   }
 ];
 

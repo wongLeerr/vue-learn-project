@@ -1,7 +1,19 @@
 <template>
-  <div class="scroll-container" @scroll="handleScroll">
+  <div class="scroll-container">
     <ul>
       <li v-for="item in itemList" :key="item">{{ item }}</li>
+      <div
+        v-expose="{
+          cb: callback,
+          args: {
+            obj: {
+              name: 'rose',
+              age: 18
+            }
+          }
+        }"
+        class="end-container"
+      ></div>
     </ul>
   </div>
 </template>
@@ -15,16 +27,21 @@ const itemList = ref([
   23, 24, 25, 26, 27, 28, 29, 30
 ]);
 
-const handleScroll = (event) => {
-  console.log('scroll', event);
-  const { scrollTop, clientHeight, scrollHeight } = event.target;
-  if (scrollTop + clientHeight >= scrollHeight - 20) {
-    loadMore();
-  }
+const obj = {
+  name: 'rose',
+  age: 18
 };
 
 const loadMore = () => {
   itemList.value = [...itemList.value, ...itemList.value];
+};
+
+const callback = (entry, observer) => {
+  const { $args } = entry.target;
+  console.log('$args:', $args);
+  if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
+    loadMore();
+  }
 };
 </script>
 
@@ -39,6 +56,11 @@ const loadMore = () => {
     margin: 10px 0;
     padding: 10px 50px;
     border: 1px solid red;
+  }
+  .end-container {
+    height: 5px;
+    width: 100%;
+    background-color: blue;
   }
 }
 </style>
