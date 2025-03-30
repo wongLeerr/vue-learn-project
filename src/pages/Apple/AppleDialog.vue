@@ -29,6 +29,7 @@ const options = ['选项1', '选项2', '选项3'];
 
 const handleBtnClick = (event: MouseEvent) => {
   console.log('按钮被点击');
+  console.log('测试git撤销指令');
   event.stopPropagation();
   const rect = btnRef.value?.getBoundingClientRect();
   if (rect) {
