@@ -2,14 +2,14 @@
   "name": "vue-learn-project",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --mode development",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "element-plus": "^2.5.2",
+    "nprogress": "^0.2.0",
     "path": "^0.12.7",
     "pinia": "^2.1.7",
     "pinia-plugin-persist": "^1.0.0",
@@ -19,6 +19,8 @@
   "devDependencies": {
     "@types/node": "^20.11.5",
     "@vitejs/plugin-vue": "^4.5.2",
+    "electron": "^28.1.4",
+    "electron-builder": "^24.9.1",
     "less": "^4.2.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
