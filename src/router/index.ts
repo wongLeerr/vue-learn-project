@@ -5,6 +5,7 @@ import Category from '../pages/Category/Category.vue';
 import Apple from '../pages/Apple/AppleDialog.vue';
 import NextPage from '../components/demo/NextPage.vue';
 import NextPage2 from '../components/demo/NextPage2.vue';
+import Animation from '../pages/Animation/index.vue';
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     path: '/apple',
     name: 'apple',
     component: Apple
+  },
+  {
+    path: '/animation',
+    name: 'animation',
+    component: Animation
   }
 ];
 
