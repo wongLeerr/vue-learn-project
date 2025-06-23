@@ -19,8 +19,15 @@ export default ({ mode }) => {
       }
     },
     server: {
-      port: 3000, // 将端口号改为 3000
-      open: true // 可选，设置为 true 表示启动项目后自动打开浏览器
+      port: 3001, // 将端口号改为 3000
+      open: true, // 可选，设置为 true 表示启动项目后自动打开浏览器
+      proxy: {
+        '/api': {
+          target: 'http://localhost:3000/',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, '')
+        }
+      }
     }
   });
 };

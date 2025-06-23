@@ -6,6 +6,7 @@ import Apple from '../pages/Apple/AppleDialog.vue';
 import NextPage from '../components/demo/NextPage.vue';
 import NextPage2 from '../components/demo/NextPage2.vue';
 import Animation from '../pages/Animation/index.vue';
+import Session from '../pages/Session/index.vue';
 
 const routes = [
   {
@@ -37,6 +38,11 @@ const routes = [
     path: '/animation',
     name: 'animation',
     component: Animation
+  },
+  {
+    path: '/session',
+    name: 'session',
+    component: Session
   }
 ];
 
