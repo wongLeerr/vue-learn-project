@@ -7,6 +7,7 @@ import NextPage from '../components/demo/NextPage.vue';
 import NextPage2 from '../components/demo/NextPage2.vue';
 import Animation from '../pages/Animation/index.vue';
 import Session from '../pages/Session/index.vue';
+import LazyLoad from '../pages/LazyLoad/index.vue';
 
 const routes = [
   {
@@ -43,6 +44,11 @@ const routes = [
     path: '/session',
     name: 'session',
     component: Session
+  },
+  {
+    path: '/lazy-load',
+    name: 'lazyLoad',
+    component: LazyLoad
   }
 ];
 
