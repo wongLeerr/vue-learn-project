@@ -8,6 +8,9 @@ import NextPage2 from '../components/demo/NextPage2.vue';
 import Animation from '../pages/Animation/index.vue';
 import Session from '../pages/Session/index.vue';
 import LazyLoad from '../pages/LazyLoad/index.vue';
+import SnapDom from '../pages/SnapDom/index.vue';
+import Demo from '../pages/Demo/Demo.vue';
+import DynamicCom from '../pages/DynamicCom/index.vue';
 
 const routes = [
   {
@@ -49,6 +52,21 @@ const routes = [
     path: '/lazy-load',
     name: 'lazyLoad',
     component: LazyLoad
+  },
+  {
+    path: '/snapDom',
+    name: 'snapDom',
+    component: SnapDom
+  },
+  {
+    path: '/demo',
+    name: 'demo',
+    component: Demo
+  },
+  {
+    path: '/dynamicCom',
+    name: 'dynamicCom',
+    component: DynamicCom
   }
 ];
 
