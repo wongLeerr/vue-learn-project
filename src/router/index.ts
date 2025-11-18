@@ -11,6 +11,7 @@ import LazyLoad from '../pages/LazyLoad/index.vue';
 import SnapDom from '../pages/SnapDom/index.vue';
 import Demo from '../pages/Demo/Demo.vue';
 import DynamicCom from '../pages/DynamicCom/index.vue';
+import Preloader from '../pages/Preloader/index.vue';
 
 const routes = [
   {
@@ -67,6 +68,11 @@ const routes = [
     path: '/dynamicCom',
     name: 'dynamicCom',
     component: DynamicCom
+  },
+  {
+    path: '/preloader',
+    name: 'preloader',
+    component: Preloader
   }
 ];
 
