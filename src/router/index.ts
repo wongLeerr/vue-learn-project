@@ -12,6 +12,7 @@ import SnapDom from '../pages/SnapDom/index.vue';
 import Demo from '../pages/Demo/Demo.vue';
 import DynamicCom from '../pages/DynamicCom/index.vue';
 import Preloader from '../pages/Preloader/index.vue';
+import Lottie from '../pages/Lottie/index.vue';
 
 const routes = [
   {
@@ -73,6 +74,11 @@ const routes = [
     path: '/preloader',
     name: 'preloader',
     component: Preloader
+  },
+  {
+    path: '/lottie',
+    name: 'lottie',
+    component: Lottie
   }
 ];
 
