@@ -1,15 +1,17 @@
 <template>
-  <div>demo:{{ x }} - {{ y }}</div>
+  <div class="demo-container">
+    <OwlWordCloud />
+  </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import useMouse from './hooks/useMouse';
-import { useFetch } from './hooks/useFetch';
-
-const url = ref;
-
-const { x, y } = useMouse();
+import OwlWordCloud from './components/OwlWordCloud.vue';
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="less" scoped>
+.demo-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+</style>
