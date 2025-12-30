@@ -36,8 +36,23 @@ export default {
         opacity: 0, // 加载前隐藏
         zIndex: 1
       },
-      // 词云数据
-      wordData: [
+      // 词云数据 - 增加数据量以撑满屏幕
+      wordData: this.generateWordData()
+    };
+  },
+  mounted() {
+    window.addEventListener('resize', this.handleResize);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+    if (this.chartInstance) {
+      this.chartInstance.dispose();
+      this.chartInstance = null;
+    }
+  },
+  methods: {
+    generateWordData() {
+      const baseData = [
         { name: 'Vue', value: 10000 },
         { name: 'JavaScript', value: 8000 },
         { name: 'TypeScript', value: 7500 },
@@ -68,20 +83,20 @@ export default {
         { name: 'Logic', value: 850 },
         { name: 'Algorithm', value: 800 },
         { name: 'Structure', value: 750 }
-      ]
-    };
-  },
-  mounted() {
-    window.addEventListener('resize', this.handleResize);
-  },
-  beforeUnmount() {
-    window.removeEventListener('resize', this.handleResize);
-    if (this.chartInstance) {
-      this.chartInstance.dispose();
-      this.chartInstance = null;
-    }
-  },
-  methods: {
+      ];
+      // 复制多份数据以填满屏幕，稍微随机化 value 避免完全重叠（虽然词云库通常处理得当）
+      let result = [];
+      for (let i = 0; i < 6; i++) {
+        result = result.concat(
+          baseData.map((item) => ({
+            name: item.name,
+            value: item.value * (0.8 + Math.random() * 0.4) // 轻微浮动
+          }))
+        );
+      }
+      return result;
+    },
+
     handleImageLoad(e) {
       const img = e.target;
       this.imgNaturalWidth = img.naturalWidth;
@@ -179,9 +194,9 @@ export default {
             // 关键：maskImage 尺寸与容器一致，且镂空位置与 img 标签一致
             maskImage: maskCanvas,
 
-            sizeRange: [12, 50],
-            rotationRange: [-45, 90],
-            rotationStep: 45,
+            sizeRange: [14, 80], // 增大字体范围
+            rotationRange: [0, 0], // 不倾斜
+            rotationStep: 0,
             gridSize: 8,
             drawOutOfBound: false,
 
