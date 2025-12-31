@@ -1,17 +1,11 @@
 <template>
-  <div class="demo-container">
-    <OwlWordCloud />
+  <div>
+    <div
+      class="flex justify-center items-center px-[20px] py-[20px] border-2 border-blue border-dashed text-[#ff6b00] font-semibold text-[30px]"
+    >
+      你好tailwindcss
+    </div>
   </div>
 </template>
 
-<script setup lang="ts">
-import OwlWordCloud from './components/OwlWordCloud.vue';
-</script>
-
-<style lang="less" scoped>
-.demo-container {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-</style>
+<script setup lang="ts"></script>

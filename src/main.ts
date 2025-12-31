@@ -11,6 +11,8 @@ import 'nprogress/nprogress.css'; // nprogress 样式
 
 import exposeDirective from './utils/directives/expose.js';
 import lazyDirective from './utils/directives/lazy.js';
+// tailwind css
+import './styles/tailwind.css';
 
 const app = createApp(App);
 
